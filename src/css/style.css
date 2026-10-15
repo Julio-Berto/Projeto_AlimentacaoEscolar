@@ -1,25 +1,3 @@
-/* css/style.css - ajustes pontuais que o Tailwind não cobre */
-
-/* Rolagem suave ao clicar nos links do menu */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Evita que o título da seção cole no topo ao navegar pelas âncoras */
-section[id] {
-  scroll-margin-top: 1rem;
-}
-
-/* Foco visível para navegação por teclado */
-a:focus-visible {
-  outline: 2px solid #fde047;
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-/* Respeita quem prefere menos animação */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  #topo {
+    background-image: url('../img/merenda.png');
   }
-}
