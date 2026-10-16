@@ -4,89 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <link rel="stylesheet" href="src\css\style.css">
-    <script src="src\js\app.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kershew: {
+                            ouro: '#C4A52C',
+                            'ouro-escuro': '#9C8420',
+                            creme: '#EEE9DB',
+                            superficie: '#FCFCF9',
+                            carvao: '#13110D',
+                            marrom: '#1C1812',
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/app.js" defer></script>
     <title>Avaliação do cardápio escolar</title>
 </head>
-<body class="bg-green-50 text-slate-800 font-sans">
+<body class="bg-kershew-creme text-kershew-carvao font-sans">
 
-    
-    
-<header id="topo" class="relative bg-green-800 bg-cover bg-center text-white py-24"
-        style="background-image: url('Galeria/fotoMerenda.png')">
+<header id="topo" class="relative overflow-hidden bg-kershew-carvao text-white py-24">
+    <img src="Galeria/fotoMerenda.png" alt="" class="absolute inset-0 h-full w-full object-cover"
+         onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'absolute left-2 top-2 z-10 rounded bg-red-700 px-3 py-1 text-sm font-bold text-white',textContent:'Foto não encontrada: Galeria/fotoMerenda.png'}))">
+    <div class="absolute inset-0 bg-gradient-to-r from-kershew-carvao/85 via-kershew-carvao/45 to-transparent"></div>
 
     <div class="relative mx-auto max-w-5xl px-5">
         <h1 class="text-4xl font-bold">Avaliação do cardápio escolar</h1>
-        <p class="mt-4 max-w-xl">Projeto de WebDesign que reúne as notas de seis dias de almoço e calcula média, total, avaliações positivas e classificação. Todas as notas são fictícias.</p>
+        <p class="mt-4 max-w-xl">Projeto de WebDesign que reúne as notas de seis dias de almoço da escola. Todas as notas são fictícias.</p>
         <nav>
             <ul class="mt-6 flex flex-wrap gap-6">
-                <li><a class="font-bold hover:underline" href="#proposito">Propósito</a></li>
-                <li><a class="font-bold hover:underline" href="#cardapio">Cardápio</a></li>
-                <li><a class="font-bold hover:underline" href="#resultados">Resultados</a></li>
-                <li><a class="font-bold hover:underline" href="#dados">Dados</a></li>
+                <li><a class="font-bold text-kershew-ouro underline underline-offset-4" href="index.html" aria-current="page">Início</a></li>
+                <li><a class="font-bold text-kershew-ouro hover:underline" href="adicionar.html">Adicionar prato</a></li>
+                <li><a class="font-bold text-kershew-ouro hover:underline" href="cardapio.html">Cardápio</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-  <main>
+<main>
 
     <section id="proposito" class="mx-auto max-w-5xl px-5 py-16">
-        <h2 class="text-3xl font-bold">Propósito do site</h2>
-        <p class="mt-4 max-w-xl">Este site simula como uma escola pode reunir a opinião dos alunos sobre o almoço em um só lugar. 
+        <h2 class="text-3xl font-bold text-kershew-carvao border-l-4 border-kershew-ouro pl-3">Propósito do site</h2>
+        <p class="mt-4 max-w-xl">Este site simula como uma escola pode reunir a opinião dos alunos sobre o almoço em um só lugar.
             Cada um dos seis dias de cardápio recebe uma nota, e o JavaScript calcula a média, soma o total, conta quantos dias foram bem avaliados e
-             classifica o resultado como Ótima, Boa ou Precisa melhorar.</p>
+            classifica o resultado como Ótima, Boa ou Precisa melhorar.</p>
         <p class="mt-4 max-w-xl">O site mostra apenas a opinião sobre as refeições. Os dados são fictícios e foram criados para este trabalho.</p>
-</section>
+    </section>
 
-<section id="escala" class="mx-auto max-w-5xl px-5 py-16">
-        <h3 class="text-2xl font-bold">Escala de avaliação </h3>
-        <p class="mt-4 max-w-xl">A escala de avaliação vai de 1 a 5, onde 1 representa 
+    <section id="escala" class="mx-auto max-w-5xl px-5 py-16">
+        <h2 class="text-3xl font-bold text-kershew-carvao border-l-4 border-kershew-ouro pl-3">Escala de avaliação</h2>
+        <p class="mt-4 max-w-xl">A escala de avaliação vai de 1 a 5, onde 1 representa
             uma avaliação ruim e 5 uma avaliação excelente. As avaliações são coletadas durante
-             um período de seis dias.</p>
-</section>
-
-    <section id="cardapio" class="mx-auto max-w-5xl px-5 py-16">
-    <h2 class="text-3xl font-bold">Cardápio escolar</h2>
-    <p class="mt-4 max-w-xl">Estes são os seis dias de cardápio avaliados. Cada card mostra o prato do dia e a nota recebida, em uma escala de 1 a 5.</p>
-    <div id="lista-cardapio" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-</section>
-
-    <section id="resultados" class="mx-auto max-w-5xl px-5 py-16">
-        <h2 class="text-3xl font-bold">Resultados das avaliações</h2>
-        <p class="mt-4 max-w-xl">Os indicadores abaixo são calculados pelo JavaScript a partir das seis notas: média, total, quantidade de avaliações positivas e classificação geral.</p>
+            um período de seis dias.</p>
     </section>
 
-    <section id="dados" class="mx-auto max-w-5xl px-5 py-16">
-        <h2 class="text-3xl font-bold">Dados das avaliações</h2>
-        <p class="mt-4 max-w-xl">A tabela mostra como cada dia entrou nas contas: a nota, se contou como avaliação positiva e a classificação recebida.
-             O total é a soma das seis notas, e a média é o total dividido por seis.</p>
-    </section>
+</main>
 
-    <section id="periodo">
-        <h3 class="text-2xl font-bold">Período</h3>
-        <ul class="mt-4 list-disc space-y-2 pl-6 ">
-            <li class="list-disc pl-6 space-y-2">Período considerado: 14 a 21 de setembro de 2026, seis dias letivos.</li>
-            <li class="list-disc pl-6 space-y-2">Avaliação positiva: nota 4 ou mais.</li>
-            <li class="list-disc pl-6 space-y-2">Classificação: Ótima a partir de 4,5, Boa de 3,0 a 4,4 e Precisa melhorar abaixo de 3,0.</li>
-        </ul>
-
-        <h3 class="text-2xl font-bold">Escala de avaliação </h3>
-        <p class="mt-4 max-w-xl">A escala de avaliação vai de 1 a 5, onde 1 representa 
-            uma avaliação ruim e 5 uma avaliação excelente. As avaliações são coletadas durante
-             um período de seis dias.</p>
-    </section>
-
-    </main>
-
-    <footer class="bg-green-800 text-white py-8 mt-16">
-        <div class="mx-auto max-w-5xl px-5">
+<footer class="bg-kershew-carvao text-white py-8 mt-16 border-t-4 border-kershew-ouro">
+    <div class="mx-auto max-w-5xl px-5">
         <p>&copy; 2026 Avaliação do cardápio escolar. Todos os direitos reservados.</p>
-        <p>Júlio César &amp; Carlos Eduardo </p>
+        <p class="text-kershew-ouro">Júlio César &amp; Carlos Eduardo</p>
         <p>Turma TSI</p>
-        </div>
-    </footer>
+    </div>
+</footer>
 
-    
 </body>
 </html>

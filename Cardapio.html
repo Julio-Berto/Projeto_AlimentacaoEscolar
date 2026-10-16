@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kershew: {
+                            ouro: '#C4A52C',
+                            'ouro-escuro': '#9C8420',
+                            creme: '#EEE9DB',
+                            superficie: '#FCFCF9',
+                            carvao: '#13110D',
+                            marrom: '#1C1812',
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/app.js" defer></script>
+    <title>Cardápio escolar: avalie os pratos</title>
+</head>
+<body class="bg-kershew-creme text-kershew-carvao font-sans">
+
+<header id="topo" class="relative overflow-hidden bg-kershew-carvao text-white py-24">
+    <img src="Galeria/fotoMerenda.png" alt="" class="absolute inset-0 h-full w-full object-cover"
+         onerror="this.replaceWith(Object.assign(document.createElement('p'),{className:'absolute left-2 top-2 z-10 rounded bg-red-700 px-3 py-1 text-sm font-bold text-white',textContent:'Foto não encontrada: Galeria/fotoMerenda.png'}))">
+    <div class="absolute inset-0 bg-gradient-to-r from-kershew-carvao/85 via-kershew-carvao/45 to-transparent"></div>
+
+    <div class="relative mx-auto max-w-5xl px-5">
+        <h1 class="text-4xl font-bold">Cardápio escolar</h1>
+        <p class="mt-4 max-w-xl">Veja os pratos de cada dia e avalie cada um com uma nota de 1 a 5. Todas as notas são fictícias.</p>
+        <nav>
+            <ul class="mt-6 flex flex-wrap gap-6">
+                <li><a class="font-bold text-kershew-ouro hover:underline" href="index.html">Início</a></li>
+                <li><a class="font-bold text-kershew-ouro hover:underline" href="adicionar.html">Adicionar prato</a></li>
+                <li><a class="font-bold text-kershew-ouro underline underline-offset-4" href="cardapio.html" aria-current="page">Cardápio</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section id="cardapio" class="mx-auto max-w-5xl px-5 py-16">
+        <h2 class="text-3xl font-bold text-kershew-carvao border-l-4 border-kershew-ouro pl-3">Avalie os pratos</h2>
+        <p class="mt-4 max-w-xl">Clique nas estrelas de cada prato para dar uma nota de 1 (ruim) a 5 (excelente). A nota fica salva no navegador.</p>
+        <div id="lista-cardapio" data-avaliavel="true" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+</main>
+
+<footer class="bg-kershew-carvao text-white py-8 mt-16 border-t-4 border-kershew-ouro">
+    <div class="mx-auto max-w-5xl px-5">
+        <p>&copy; 2026 Avaliação do cardápio escolar. Todos os direitos reservados.</p>
+        <p class="text-kershew-ouro">Júlio César &amp; Carlos Eduardo</p>
+        <p>Turma TSI</p>
+    </div>
+</footer>
+
+</body>
+</html>
