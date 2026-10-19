@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "./style.css";
+
+@theme {
+  --color-kershew-ouro: #C4A52C;
+  --color-kershew-ouro-escuro: #9C8420;
+  --color-kershew-creme: #EEE9DB;
+  --color-kershew-superficie: #FCFCF9;
+  --color-kershew-carvao: #13110D;
+  --color-kershew-marrom: #1C1812;
+}

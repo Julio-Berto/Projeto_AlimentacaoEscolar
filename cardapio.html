@@ -3,26 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        kershew: {
-                            ouro: '#C4A52C',
-                            'ouro-escuro': '#9C8420',
-                            creme: '#EEE9DB',
-                            superficie: '#FCFCF9',
-                            carvao: '#13110D',
-                            marrom: '#1C1812',
-                        },
-                    },
-                },
-            },
-        };
-    </script>
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/output.css">
+    <script src="src/js/Calculos.js" defer></script>
     <script src="src/js/app.js" defer></script>
     <title>Cardápio escolar: avalie os pratos</title>
 </head>
@@ -39,7 +21,6 @@
         <nav>
             <ul class="mt-6 flex flex-wrap gap-6">
                 <li><a class="font-bold text-kershew-ouro hover:underline" href="index.html">Início</a></li>
-                <li><a class="font-bold text-kershew-ouro hover:underline" href="adicionar.html">Adicionar prato</a></li>
                 <li><a class="font-bold text-kershew-ouro underline underline-offset-4" href="cardapio.html" aria-current="page">Cardápio</a></li>
             </ul>
         </nav>
@@ -53,6 +34,44 @@
         <p class="mt-4 max-w-xl">Clique nas estrelas de cada prato para dar uma nota de 1 (ruim) a 5 (excelente). A nota fica salva no navegador.</p>
         <div id="lista-cardapio" data-avaliavel="true" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     </section>
+
+    <section id="resultados" class="mx-auto max-w-5xl px-5 py-16">
+    <h2 class="text-3xl font-bold text-kershew-carvao border-l-4 border-kershew-ouro pl-3">Resultados</h2>
+    <p class="mt-4 max-w-xl">Os números abaixo são calculados pelo JavaScript e mudam quando você altera uma nota.</p>
+
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="rounded border border-kershew-ouro/40 bg-kershew-superficie p-5">
+            <p class="text-sm font-bold text-kershew-ouro-escuro">Média</p>
+            <p id="res-media" class="mt-2 text-3xl font-bold">-</p>
+        </div>
+        <div class="rounded border border-kershew-ouro/40 bg-kershew-superficie p-5">
+            <p class="text-sm font-bold text-kershew-ouro-escuro">Total das notas</p>
+            <p id="res-soma" class="mt-2 text-3xl font-bold">-</p>
+        </div>
+        <div class="rounded border border-kershew-ouro/40 bg-kershew-superficie p-5">
+            <p class="text-sm font-bold text-kershew-ouro-escuro">Avaliações positivas (nota 4 ou mais)</p>
+            <p id="res-positivas" class="mt-2 text-3xl font-bold">-</p>
+        </div>
+        <div class="rounded border border-kershew-ouro/40 bg-kershew-superficie p-5">
+            <p class="text-sm font-bold text-kershew-ouro-escuro">Classificação</p>
+            <p id="res-classificacao" class="mt-2 text-3xl font-bold">-</p>
+        </div>
+    </div>
+
+    <div class="mt-8 overflow-x-auto">
+        <table class="w-full border border-kershew-ouro/40 bg-kershew-superficie text-left">
+            <thead class="bg-kershew-carvao text-white">
+                <tr>
+                    <th class="p-3">Dia</th>
+                    <th class="p-3">Prato</th>
+                    <th class="p-3">Nota</th>
+                    <th class="p-3">Positiva?</th>
+                </tr>
+            </thead>
+            <tbody id="res-tabela"></tbody>
+        </table>
+    </div>
+</section>
 
 </main>
 
