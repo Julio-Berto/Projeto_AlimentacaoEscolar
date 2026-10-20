@@ -3,12 +3,12 @@
 const CHAVE_ARMAZENAMENTO = "cardapio-escolar";
 
 const cardapioPadrao = [
-  { data: "2026-09-14", prato: "Arroz, feijão e frango grelhado", nota: 5 },
-  { data: "2026-09-15", prato: "Macarrão com carne moída",        nota: 4 },
-  { data: "2026-09-16", prato: "Baião de dois com legumes",       nota: 3 },
-  { data: "2026-09-17", prato: "Arroz, feijão e peixe assado",    nota: 2 },
-  { data: "2026-09-18", prato: "Strogonoff de frango com arroz",  nota: 5 },
-  { data: "2026-09-21", prato: "Feijoada leve com arroz",         nota: 4 },
+  { data: "2026-09-14", prato: "Sanduiche natural", nota: 5, foto: "Galeria/foto1.jpg" },
+  { data: "2026-09-15", prato: "Salada de frutas", nota: 4, foto: "Galeria/foto2.jpeg" },
+  { data: "2026-09-16", prato: "Pão com manteiga",  nota: 3, foto: "Galeria/foto3.jpeg" },
+  { data: "2026-09-17", prato: "Arroz de leite",  nota: 2, foto: "Galeria/foto4.png" },
+  { data: "2026-09-18", prato: "Bolacha com suco",  nota: 5, foto: "Galeria/foto5.jpeg" },
+  { data: "2026-09-21", prato: "Cuscuz", nota: 4, foto: "Galeria/foto6.jpg" },
 ];
 
 // Lê o cardápio salvo no navegador; se não houver, usa o inicial.
