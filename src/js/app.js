@@ -1,6 +1,4 @@
-// ===== 1. DADOS =====
 // Seis dias de cardápio, com notas fictícias de 1 a 5.
-// Se mudar o formato desta lista, troque o nome da CHAVE (o navegador guarda a lista antiga).
 const CHAVE = "cardapio-escolar-v3";
 
 const cardapioPadrao = [
