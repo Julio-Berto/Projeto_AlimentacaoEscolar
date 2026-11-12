@@ -1,8 +1,7 @@
-// ===== REGRAS DE CÁLCULO =====
-// Este arquivo só calcula. Não lê nem escreve nada na página.
-const LIMITE_POSITIVA = 4;  // nota 4 ou mais conta como avaliação positiva
-const LIMITE_OTIMA = 4.5;   // média a partir de 4,5
-const LIMITE_BOA = 3;       // média de 3,0 até menos de 4,5
+
+const LIMITE_POSITIVA = 4;  
+const LIMITE_OTIMA = 4.5;   
+const LIMITE_BOA = 3;       
 
 // Recebe a média e devolve o texto da classificação.
 function classificar(media) {
@@ -11,7 +10,7 @@ function classificar(media) {
   return "Precisa melhorar";
 }
 
-// Recebe a lista de pratos (cada um com .nota) e devolve o resumo.
+// percorre os pratos com um for
 function calcularResumo(lista) {
   let soma = 0;
   let positivas = 0;

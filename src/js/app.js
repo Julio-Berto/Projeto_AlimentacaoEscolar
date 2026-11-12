@@ -1,8 +1,4 @@
-// ===== 1. DADOS =====
-// Seis dias de cardápio, com notas fictícias de 1 a 5.
-// Se mudar o formato desta lista, troque o nome da CHAVE (o navegador guarda a lista antiga).
-const CHAVE = "cardapio-escolar-v3";
-
+// dados do cardapio
 const cardapioPadrao = [
   { dia: "Segunda-feira, 14/09", prato: "Sanduiche natural", nota: 5, foto: "Galeria/foto1.jpg" },
   { dia: "Terça-feira, 15/09",   prato: "Salada de frutas",  nota: 4, foto: "Galeria/foto2.jpeg" },
@@ -12,10 +8,10 @@ const cardapioPadrao = [
   { dia: "Segunda-feira, 21/09", prato: "Cuscuz",            nota: 4, foto: "Galeria/foto6.jpg" },
 ];
 
-// Usa a lista salva no navegador; se não houver, usa a lista inicial.
-let cardapio = JSON.parse(localStorage.getItem(CHAVE)) || cardapioPadrao;
 
-// ===== 2. CARDS COM ESTRELAS =====
+let cardapio = cardapioPadrao;
+
+
 // Cria as 5 estrelas: as que têm número até a nota ficam escuras ("acesas").
 function criarEstrelas(posicao, nota) {
   let estrelas = "";
@@ -48,8 +44,8 @@ function mostrarCardapio() {
   lista.innerHTML = cardapio.map(criarCard).join("");
 }
 
-// ===== 3. RESULTADOS =====
-// As contas ficam no Calculos.js (calcularResumo e formatarNumero).
+// resultados do cardapio
+
 const CORES = {
   "Ótima": "text-green-700",
   "Boa": "text-kershew-ouro-escuro",
@@ -82,7 +78,7 @@ function mostrarResultados() {
   }).join("");
 }
 
-// ===== 4. CLIQUE NAS ESTRELAS =====
+// clique nas estrelas para avaliar
 const lista = document.getElementById("lista-cardapio");
 
 if (lista && lista.dataset.avaliavel === "true") {
@@ -91,9 +87,8 @@ if (lista && lista.dataset.avaliavel === "true") {
     if (!botao) return; // clicou fora de uma estrela
 
     cardapio[botao.dataset.posicao].nota = Number(botao.dataset.nota); // 1) muda a nota
-    localStorage.setItem(CHAVE, JSON.stringify(cardapio));             // 2) salva no navegador
-    mostrarCardapio();                                                 // 3) redesenha as estrelas
-    mostrarResultados();                                               // 4) recalcula o resultado
+    mostrarCardapio();                                                 // 2) redesenha as estrelas
+    mostrarResultados();                                               // 3) recalcula o resultado
   });
 }
 
